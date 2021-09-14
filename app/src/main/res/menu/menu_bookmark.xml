@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <item
+        android:id="@+id/action_share"
+        android:iconTint="@color/ijo_200"
+        android:title="Bagikan"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/action_link"
+        android:title="Website"
+        android:iconTint="@color/ijo_200"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_bookmark"
+        android:icon="@drawable/ic_add"
+        android:title="Home"
+        android:iconTint="@color/ijo_200"
+        app:showAsAction="always"/>
+
+</menu>

@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">ZNNews</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enabled">Enabled</string>
+    <string name="disabled">Disabled</string>
+    <string name="dark">Dark</string>
+    <string name="light">Light</string>
+    <string name="percent">99%</string>
+
+    
+    <string-array name="auto_simpan">
+        <item>@string/enabled</item>
+        <item>@string/disabled</item>
+
+    </string-array>
+
+
+
+    <string-array name="mode_dark">
+        <item>@string/dark</item>
+        <item>@string/light</item>
+
+    </string-array>
+
+    <string-array name="entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+
+    </string-array>
+</resources>
