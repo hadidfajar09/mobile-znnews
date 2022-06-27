@@ -19,7 +19,7 @@ class HomeViewModel(
 ): ViewModel() {
 
     val title = "ZNNews"
-    val category by lazy { MutableLiveData<String>() }
+    val category by lazy { MutableLiveData<Int>() }
     val message by lazy { MutableLiveData<String>() }
     val loading by lazy { MutableLiveData<Boolean>() }
     val loadMore by lazy { MutableLiveData<Boolean>() }
@@ -27,11 +27,11 @@ class HomeViewModel(
 
 
     init {
-        category.value = ""
+        category.value = 1
         message.value = null
     }
 
-    var query = ""
+    var keyword = ""
     var page = 1
     var total = 1
 
@@ -41,7 +41,7 @@ class HomeViewModel(
             try {
                 val response = repository.fetch(
                     category.value!!,
-                    query,
+                    keyword,
                     page
                 )
                 news.value = response
@@ -58,14 +58,14 @@ class HomeViewModel(
 
     //data yg tampil d aplikasi n id parameter yg dgunakan
     val categories = listOf<CategoryModel>(
-        CategoryModel("","Berita Utama"),
-        CategoryModel("business","Bisnis"),
-        CategoryModel("entertainment","Hiburan"),
-        CategoryModel("general","Umum"),
-        CategoryModel("health","Kesehatan"),
-        CategoryModel("science","Sains"),
-        CategoryModel("sports","Olahraga"),
-        CategoryModel("technology","Teknologi"),
+        CategoryModel(1,"Berita Utama"),
+        CategoryModel(2,"HIburan"),
+        CategoryModel(3,"Bisnis"),
+        CategoryModel(4,"Kesehatan"),
+        CategoryModel(5,"Sains"),
+        CategoryModel(7,"Teknologi"),
+        CategoryModel(8,"Agama"),
+        CategoryModel(14,"Olahraga"),
 
     )
 

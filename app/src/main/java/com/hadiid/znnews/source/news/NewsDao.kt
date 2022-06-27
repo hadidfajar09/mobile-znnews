@@ -10,8 +10,8 @@ interface NewsDao {
     @Query("SELECT * FROM tableArticle")
     fun findAll(): LiveData<List<ArticleModel>>
 
-    @Query("SELECT COUNT(*) FROM tableArticle WHERE publishedAt=:publish")
-    suspend fun find(publish: String): Int
+    @Query("SELECT COUNT(*) FROM tableArticle WHERE id=:publish")
+    suspend fun find(publish: Int): Int
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun save(articleModel: ArticleModel)

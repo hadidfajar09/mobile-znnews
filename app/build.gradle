@@ -12,23 +12,15 @@ android {
         applicationId "com.hadiid.znnews"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
-        debug {
-            buildConfigField("String", 'BASE_URL', '"https://newsapi.org/v2/"')
-            buildConfigField("String", 'API_KEY', '"46ec5a6edce648f896ffbcb13df08def"')
 
-        }
         release {
-            buildConfigField("String", 'BASE_URL', '"https://newsapi.org/v2/"')
-            buildConfigField("String", 'API_KEY', '"666060a1a9a34cbda196f631b7adc617"')
-
-
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -46,7 +38,9 @@ android {
     }
 }
 
-dependencies {    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.6.0'
     implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'com.google.android.material:material:1.4.0'
@@ -94,5 +88,6 @@ dependencies {    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_ver
     def preference_version = '1.1.0'
     implementation("androidx.preference:preference:$preference_version")
 
+    implementation("androidx.webkit:webkit:1.4.0")
 
 }

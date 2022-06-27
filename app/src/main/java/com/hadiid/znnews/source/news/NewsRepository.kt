@@ -1,6 +1,5 @@
 package com.hadiid.znnews.source.news
 
-import com.hadiid.znnews.BuildConfig
 import com.hadiid.znnews.source.network.ApiClient
 import org.koin.dsl.module
 
@@ -14,20 +13,18 @@ class NewsRepository(
 ) {
 
     suspend fun fetch(
-        category: String? = "",
-        query: String,
+        category: Int?,
+        keyword: String,
         page: Int,
     ): NewsModel{
         return api.fetchNews(
-            BuildConfig.API_KEY,
-            "id",
             category!!,
-            query,
+            keyword,
             page
         )
     }
 
-    suspend fun find(articleModel: ArticleModel) = db.find(articleModel.publishedAt)
+    suspend fun find(articleModel: ArticleModel) = db.find(articleModel.id)
 
     suspend fun save(articleModel: ArticleModel) {
         db.save(articleModel)

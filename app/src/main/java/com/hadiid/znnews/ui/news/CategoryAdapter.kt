@@ -9,10 +9,10 @@ import com.hadiid.znnews.databinding.AdapterCategoryBinding
 import com.hadiid.znnews.source.news.CategoryModel
 
 class CategoryAdapter(
+
     val categories: List<CategoryModel>,
     val listener: OnAdapterListener
 ): RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
-
     private val items = arrayListOf<TextView>()
 
     class ViewHolder(val binding: AdapterCategoryBinding): RecyclerView.ViewHolder(binding.root)
@@ -41,7 +41,9 @@ class CategoryAdapter(
     override fun getItemCount() = categories.size
 
     private fun setColor(textView: TextView){
-        items.forEach { it.setBackgroundResource(R.color.white) }
-        textView.setBackgroundResource(R.color.ijo_200)
+
+
+        items.forEach { it.setBackgroundResource(R.color.ijo_200) }
+        textView.setBackgroundResource(R.color.ijo_500)
     }
 }

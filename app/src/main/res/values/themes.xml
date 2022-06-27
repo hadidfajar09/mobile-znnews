@@ -7,10 +7,14 @@
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/ijo_700</item>
-        <item name="colorSecondaryVariant">@color/ijo_500</item>
+        <item name="colorSecondaryVariant">@color/text_night</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
+        <item name="android:textColor">@color/black</item>
     </style>
+
+
 </resources>

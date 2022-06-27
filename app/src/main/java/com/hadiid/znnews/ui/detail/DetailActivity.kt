@@ -7,17 +7,14 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.webkit.WebView
-import android.webkit.WebViewClient
-import android.widget.Toast
+import androidx.core.text.HtmlCompat
 import com.hadiid.znnews.R
 import com.hadiid.znnews.databinding.ActivityDetailBinding
 import com.hadiid.znnews.databinding.CustomToolbarBinding
 import com.hadiid.znnews.source.news.ArticleModel
-import com.hadiid.znnews.source.news.SourceModel
+import com.hadiid.znnews.util.loadImage
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.dsl.module
-import java.net.URI
 
 val detailModule = module {
     factory { DetailActivity() }
@@ -42,26 +39,35 @@ class DetailActivity : AppCompatActivity() {
 
         setSupportActionBar(bindingToolbar.container)
         supportActionBar!!.apply {
-            title = detail.source?.name
+            title = detail.name
             setDisplayHomeAsUpEnabled(true)
         }
 
+//        Glide.with(applicationContext)
+//            .load(detail.urlToImage)
+//            .placeholder(R.drawable.logo)
+//            .error(R.drawable.placeholder)
+//            .into(binding.image)
+
         detail.let {
-            viewModel.find(it)
-            val web = binding.webView
-            web.loadUrl(it.url!!)
+            viewModel.find(it!!)
+            binding.title.text = detail.title
+            binding.textKolumnis.text = detail.kolumnis
+            binding.textTime.text = detail.publishedAt + " WITA"
+
+            loadImage(binding.image, detail.urlToImage)
+            binding.textDescription.text =
+                detail.description?.let { it1 -> HtmlCompat.fromHtml(it1,0) }
+
             bindingToolbar.logoTitle.visibility = View.GONE
-            web.webViewClient = object : WebViewClient(){
-                override fun onPageFinished(view: WebView?, url: String?) {
-                    super.onPageFinished(view, url)
-                    binding.progressTop.visibility = View.GONE
-                }
-            }
-            val settings = binding.webView.settings
-            settings.javaScriptCanOpenWindowsAutomatically = false
+            binding.progressTop.visibility = View.VISIBLE
+
         }
 
+        binding.progressTop.visibility = View.GONE
+
     }
+
 
     override fun onSupportNavigateUp(): Boolean {
         finish()
@@ -84,8 +90,6 @@ class DetailActivity : AppCompatActivity() {
         })
 
 
-
-
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -93,7 +97,7 @@ class DetailActivity : AppCompatActivity() {
 
         when(item.itemId){
             R.id.action_share -> {
-                val shareBody = "ZNNews - Berita Hangat sumber: ${detail.source?.name} klik link selengkapnya : ${detail.url}"
+                val shareBody = "ZNNews - Berita Hangat sumber: ${detail.name} klik link selengkapnya : ${detail.url}"
 
                 val shareSub = "From ZNNews"
 

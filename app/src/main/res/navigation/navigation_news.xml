@@ -20,4 +20,5 @@
         android:name="com.hadiid.znnews.ui.info.InfoFragment"
         android:label="fragment_info"
         tools:layout="@layout/fragment_info" />
+         />
 </navigation>

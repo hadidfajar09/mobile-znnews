@@ -8,6 +8,8 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+private const val baseUrl = "https://cakramorowali.com/"
+
 val networkModule = module {
     single { provideOkhttpClient() }
     single { provideRetrofit(get()) }
@@ -24,7 +26,7 @@ fun provideOkhttpClient() : OkHttpClient{
 
 fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
     return Retrofit.Builder()
-        .baseUrl( BuildConfig.BASE_URL )
+        .baseUrl(baseUrl)
         .client( okHttpClient )
         .addConverterFactory (
             GsonConverterFactory.create(

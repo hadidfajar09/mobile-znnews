@@ -21,14 +21,99 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         />
-    <WebView
-        android:id="@+id/web_view"
+
+
+    <TextView
+        android:id="@+id/title"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        tools:text="Pada hari ini team GlassTea tidak pernah menang turnamen manapun - ZNNews"
+        android:text="@{article.title}"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="?attr/colorOnSecondary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/progress_top"
-        app:layout_constraintBottom_toBottomOf="parent"
         />
+
+
+
+    <TextView
+        android:id="@+id/text_kolumnis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="5dp"
+        android:drawableStart="@drawable/ic_kolumnis"
+        tools:text=" ZeroNineNews |"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"/>
+    <TextView
+        android:id="@+id/text_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="5dp"
+        android:drawableStart="@drawable/ic_time"
+        tools:text=" Waktu"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/text_kolumnis"
+        app:layout_constraintTop_toTopOf="@id/text_kolumnis"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/border"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_time"
+        >
+        <ImageView
+            android:id="@+id/image"
+            tools:src="@drawable/logo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            />
+    </com.google.android.material.card.MaterialCardView>
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/border">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:textSize="14sp"
+                tools:text="Detail Berita" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

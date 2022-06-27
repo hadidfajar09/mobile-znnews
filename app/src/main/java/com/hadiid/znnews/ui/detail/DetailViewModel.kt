@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.hadiid.znnews.source.news.ArticleModel
 import com.hadiid.znnews.source.news.NewsRepository
-import com.hadiid.znnews.source.news.SourceModel
 import kotlinx.coroutines.launch
 import org.koin.dsl.module
 

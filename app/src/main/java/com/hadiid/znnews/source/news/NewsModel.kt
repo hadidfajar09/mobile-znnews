@@ -7,6 +7,8 @@ import java.io.Serializable
 data class NewsModel(
 
     val status: String,
+    val reply: String,
+    val totalNews: Int,
     val totalResults: Int,
     val articles: List<ArticleModel>,
 
@@ -14,18 +16,16 @@ data class NewsModel(
 
 @Entity(tableName = "tableArticle")
 data class ArticleModel (
-    val source: SourceModel?,
-    val author: String?,
-    val title: String?,
-    val description: String?,
-    val url: String?,
-    val urlToImage: String?,
     @PrimaryKey(autoGenerate = false)
-    val publishedAt: String,
-    val content: String?,
+    val id: Int,
+    val category: String? = "",
+    val name: String? = "",
+    val title: String? = "",
+    val kolumnis: String? = "",
+    val description: String? = "",
+    val url: String? = "",
+    val urlToImage: String? = "",
+    val publishedAt: String? ="",
 ) : Serializable
 
-data class SourceModel (
-    val id: String?,
-    val name: String?,
-) : Serializable
+

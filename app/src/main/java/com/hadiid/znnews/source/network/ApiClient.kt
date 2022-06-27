@@ -6,12 +6,10 @@ import retrofit2.http.Query
 
 interface ApiClient {
 
-    @GET("top-headlines")
+    @GET("api/news-category")
     suspend fun fetchNews(
-        @Query("apiKey") apiKey: String,
-        @Query("country") country: String,
-        @Query("category") category: String,
-        @Query("q") query: String,
+        @Query("category_id") category: Int,
+        @Query("keyword") keyword: String,
         @Query("page") page: Int,
 
         ): NewsModel

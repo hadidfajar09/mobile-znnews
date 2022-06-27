@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.core.widget.NestedScrollView
-import androidx.lifecycle.Observer
 import com.hadiid.znnews.R
 import com.hadiid.znnews.databinding.CustomToolbarBinding
 import com.hadiid.znnews.databinding.FragmentHomeBinding
@@ -63,7 +62,7 @@ class HomeFragment : Fragment() {
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                newText?.let { viewModel.query = it }
+                newText?.let { viewModel.keyword = it }
                 return true
             }
 
@@ -71,8 +70,8 @@ class HomeFragment : Fragment() {
 
         binding.listCategory.adapter = categoryAdapter
         viewModel.category.observe(viewLifecycleOwner,  {
-            Timber.e(it)
-            NewsAdapter.VIEW_TYPES = if(it!!.isEmpty()) 1 else 2
+            Timber.e(it.toString())
+            NewsAdapter.VIEW_TYPES = if(it!! == 1) 1 else 2
             firstLoad()
         })
 

@@ -27,84 +27,126 @@
             layout="@layout/custom_toolbar" />
 
 
-        <TextView
-            android:id="@+id/title_info"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="90dp"
-            android:text="App Name"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/toolbar"
-            app:layout_constraintBottom_toBottomOf="@id/subtitle_info"/>
+
+            <TextView
+                android:id="@+id/title_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="90dp"
+                android:text="App Name"
+                android:textColor="?attr/colorOnSecondary"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/toolbar"
+                app:layout_constraintBottom_toBottomOf="@id/subtitle_info"/>
+
+            <TextView
+                android:id="@+id/subtitle_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="90dp"
+                android:text="Aplikasi Berita ZNNEWS"
+                android:textColor="?attr/colorSecondaryVariant"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/toolbar"
+                app:layout_constraintBottom_toBottomOf="@id/title_info"/>
+
+            <TextView
+                android:id="@+id/title_dark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:text="Dark Mode"
+                android:textColor="?attr/colorOnSecondary"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title_info"
+                />
+
+            <Switch
+                android:id="@+id/switch1"
+                android:paddingEnd="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/subtitle_info"
+                app:layout_constraintBottom_toBottomOf="@id/title_dark"/>
+
+            <TextView
+                android:id="@+id/title_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:text="Version"
+                android:textColor="?attr/colorOnSecondary"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title_dark"
+                />
+
+            <TextView
+                android:id="@+id/subtitle_ver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="30dp"
+                android:text="1.0"
+                android:textColor="?attr/colorSecondaryVariant"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/switch1"
+                app:layout_constraintBottom_toBottomOf="@id/title_version"/>
 
         <TextView
-            android:id="@+id/subtitle_info"
+            android:id="@+id/title_rate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="40dp"
-            android:layout_marginTop="90dp"
-            android:text="Aplikasi Berita ZNNEWS"
-            android:textColor="@color/black"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/toolbar"
-            app:layout_constraintBottom_toBottomOf="@id/title_info"/>
-
-        <TextView
-            android:id="@+id/title_dark"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="30dp"
-            android:text="Dark Mode"
-            android:textColor="@color/black"
+            android:text="Rate Us"
+            android:textColor="?attr/colorOnSecondary"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title_info"
+            app:layout_constraintTop_toBottomOf="@id/title_version"
             />
 
-        <Switch
-            android:id="@+id/switch1"
-            android:paddingEnd="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="40dp"
-            android:layout_marginTop="30dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/subtitle_info"
-            app:layout_constraintBottom_toBottomOf="@id/title_dark"/>
-
         <TextView
-            android:id="@+id/title_version"
+            android:id="@+id/subtitle_rate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
+            android:layout_marginRight="20dp"
             android:layout_marginTop="30dp"
-            android:text="Version"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title_dark"
-            />
-
-        <TextView
-            android:id="@+id/subtitle_ver"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="40dp"
-            android:layout_marginTop="30dp"
-            android:text="1.0"
-            android:textColor="@color/black"
+            android:text="On Playstore"
+            android:textColor="?attr/colorSecondaryVariant"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/switch1"
-            app:layout_constraintBottom_toBottomOf="@id/title_version"/>
+            app:layout_constraintTop_toBottomOf="@id/subtitle_ver"
+            app:layout_constraintBottom_toBottomOf="@id/title_rate"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/website"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Website"
+            android:layout_marginBottom="50px"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

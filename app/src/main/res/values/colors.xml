@@ -10,4 +10,7 @@
     <color name="ijo_200">#A5D6A7</color>
     <color name="ijo_500">#4CAF50</color>
     <color name="ijo_700">#388E3C</color>
+    <color name="text_light">#B7BCB7</color>
+    <color name="text_night">#747874</color>
+
 </resources>

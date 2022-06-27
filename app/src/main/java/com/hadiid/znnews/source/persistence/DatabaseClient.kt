@@ -5,15 +5,14 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.hadiid.znnews.source.news.ArticleModel
 import com.hadiid.znnews.source.news.NewsDao
-import com.hadiid.znnews.util.SourceConverter
 
 @Database(
     entities = [ArticleModel::class],
-    version = 1,
+    version = 4,
     exportSchema = false
 )
 
-@TypeConverters(SourceConverter::class)
+
 abstract class DatabaseClient:RoomDatabase() {
     abstract val newsDao: NewsDao
 
